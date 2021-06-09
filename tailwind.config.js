@@ -1,12 +1,16 @@
 module.exports = {
-  mode: 'jit',
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  mode: "",
+  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        roboto: ['"Roboto"'], // Ensure fonts with spaces have " " surrounding it.
+      },
+    },
   },
   variants: {
     extend: {},
   },
   plugins: [],
-}
+};
