@@ -6,10 +6,10 @@ module.exports = {
     extend: {
       fontFamily: {
         "roboto-mono": ["Roboto Mono", "monospace"],
-        "inter": ["Inter", "sans-serif"],
-        "edu-sa": ["Edu SA Beginner", "sans-serif"],
-      },
-    },
+        inter: ["Inter", "sans-serif"],
+        "edu-sa": ["Edu SA Beginner", "sans-serif"]
+      }
+    }
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")]
 };
