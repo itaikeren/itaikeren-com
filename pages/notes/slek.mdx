@@ -1,0 +1,89 @@
+import NoteDate from '@/components/note-date';
+
+## Unveiling Slek, a calendar component for React
+    <NoteDate date={new Date('2023-11-20')} />
+---
+
+Today, I'm excited to share with you the journey behind the creation of the Slek Calendar Component for React. Buckle up, as we embark on a tale of long-standing dreams, open-source passion, and a touch of whimsy.
+
+### The Long-Awaited Dream
+
+For as long as I can remember, the idea of crafting a sleek and functional calendar component has lingered in the back of my developer mind. There's something oddly satisfying about taming the ever-elusive concept of time into a neat, organized grid. Finally, the stars aligned, and the Slek Calendar was born.
+
+### Open-Source Love Affair
+
+Now, you know me – I'm a sucker for open-source projects. I believe in the power of collaboration, the magic that happens when minds from around the world come together to create something greater than the sum of its parts. So, what better way to introduce my brainchild to the world than to throw it into the open-source arena?
+
+### The Anatomy of Slek
+
+Let's dive into the juicy bits – the structure of the Slek Calendar. Picture this:
+
+```jsx
+<Calendar>
+  <Calendar.Header>
+    <Calendar.Headline/>
+    <Calendar.PrevButton />
+    <Calendar.NextButton />
+  </Calendar.Header>
+  <Calendar.Grid>
+    { (props) => <MyCell {...props} /> }
+  </Calendar.Grid>
+</Calendar>
+```
+
+#### `Calendar`
+
+The Calendar component is the container for the entire calendar. It's the parent, the boss, the one who calls the shots. It's also the place where you can set the calendar's initial date, the start of the week, the language, and more.
+
+#### `Calendar.Header`
+
+This is where the magic begins. The Header is the top section of the calendar, containing the headline and navigation buttons. It's also the place where you can set a custom headline, and a custom navigation buttons.
+
+#### `Calendar.Grid`
+
+Ah, the heart and soul of our component. The Grid is where the calendar's cells are rendered, this is also where most of the customization happens. I choose to use a render prop here, to give you the freedom to render your own cell component, and pass it the necessary props. Under the hood I wrap each cell with an inner component, which provides the cell some extra data attributes, and handles the click events.
+
+### The Building Process
+
+Building a calendar component is like sculpting – you start with a rough block of code and chisel away until you reveal a masterpiece. Here's a condensed version of my journey:
+
+#### Brainstorming and Design:
+
+   I sat down with a cup of coffee (okay, maybe more than one) and sketched out the structure. What elements does a calendar need? How can I make it flexible for various use cases? What's the best way to make it customizable?
+   
+   I choose to go with an unstyled approach, to give you the freedom to style it as you wish, and just focus on the functionality.
+
+   Also, two things I knew from the start:
+   1. I wanted to use a render prop for the Grid, because: (A) I find it more flexible, and (B) I want to give you the freedom to render your own cell component.
+  2. I wanted to use the grid layout and not enters to the dark world of tables.
+
+#### Coding Frenzy:
+
+   Armed with VS Code and determination, I started coding.
+   
+   I began with building the Grid, as this is the heart of our component. Most of the current Calendar components out there only provide the "dates view", but I wanted to give you the option to render a "months view" and a "year view" as well, which means I had to calculate the size of the grid dynamically (7 columns for the dates and 3 for the months and years).
+
+   Also, it good to mention that I used [dayjs](https://day.js.org/) for all the date calculations and manipulations (which is the only dependency of this component), so adding support for different languages, start of the week and dates style was a real breeze.
+
+    Next, I moved on to the Header. Most of the calendars out there have the same header structure, so I didn't want to reinvent the wheel here (headline-nav buttons). By default, the headline is the current month and year, but you can easily override it with your own custom headline. Same goes for the navigation buttons.
+  
+    Finally, I added the Calendar component, which is the container for the entire calendar.
+
+#### Open-Source Reveal:
+
+   Finally, the moment arrived. I pushed Slek onto GitHub, releasing it into the wild. I held my breath, wondering if others would find it as thrilling as I did.
+
+   Make sure you check out the [Slek website](https://slek.itaikeren.com/) for a live demo and some code examples.
+
+### Conclusion
+
+And there you have it – the tale of Slek, a calendar component born out of passion, code, and a sprinkle of geekiness. I hope this component brings as much joy to your projects as it did to mine. Dive into the code, tweak it, break it, and let's continue to build amazing things together in the open-source universe!
+
+Happy coding, and may your calendars be forever synchronized! 📆✨
+
+
+
+export default function MDXPage({ children }) {
+  return <div className="prose max-w-none prose-slate prose-h2:font-mono prose-h2:m-0 dark:text-slate-400 dark:prose-headings:text-white dark:prose-a:text-white hover:prose-a:opacity-70 prose-hr:my-5">{children}</div>;
+
+}
