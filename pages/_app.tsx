@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import Head from "next/head";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
 
@@ -42,6 +43,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
         <Footer />
       </Container>
+      <SpeedInsights />
     </ThemeProvider>
   );
 }
