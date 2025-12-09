@@ -1,5 +1,5 @@
-import Separator from "@/components/separator";
 import List from "@/components/list";
+import Separator from "@/components/separator";
 
 const NOTES = [
   {

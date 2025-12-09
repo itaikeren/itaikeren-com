@@ -1,7 +1,7 @@
-import NoteDate from '@/components/note-date';
+import NoteDate from "@/components/note-date";
 
 ## Unveiling Slek, a calendar component for React
-    <NoteDate date={new Date('2023-11-20')} />
+<NoteDate date={new Date('2023-11-20')} />
 ---
 
 Today, I'm excited to share with you the journey behind the creation of the Slek Calendar Component for React. Buckle up, as we embark on a tale of long-standing dreams, open-source passion, and a touch of whimsy.
@@ -50,7 +50,7 @@ Building a calendar component is like sculpting – you start with a rough block
 #### Brainstorming and Design:
 
    I sat down with a cup of coffee (okay, maybe more than one) and sketched out the structure. What elements does a calendar need? How can I make it flexible for various use cases? What's the best way to make it customizable?
-   
+
    I choose to go with an unstyled approach, to give you the freedom to style it as you wish, and just focus on the functionality.
 
    Also, two things I knew from the start:
@@ -60,13 +60,13 @@ Building a calendar component is like sculpting – you start with a rough block
 #### Coding Frenzy:
 
    Armed with VS Code and determination, I started coding.
-   
+
    I began with building the Grid, as this is the heart of our component. Most of the current Calendar components out there only provide the "dates view", but I wanted to give you the option to render a "months view" and a "year view" as well, which means I had to calculate the size of the grid dynamically (7 columns for the dates and 3 for the months and years).
 
    Also, it good to mention that I used [dayjs](https://day.js.org/) for all the date calculations and manipulations (which is the only dependency of this component), so adding support for different languages, start of the week and dates style was a real breeze.
 
     Next, I moved on to the Header. Most of the calendars out there have the same header structure, so I didn't want to reinvent the wheel here (headline-nav buttons). By default, the headline is the current month and year, but you can easily override it with your own custom headline. Same goes for the navigation buttons.
-  
+
     Finally, I added the Calendar component, which is the container for the entire calendar.
 
 #### Open-Source Reveal:
@@ -79,11 +79,4 @@ Building a calendar component is like sculpting – you start with a rough block
 
 And there you have it – the tale of Slek, a calendar component born out of passion, code, and a sprinkle of geekiness. I hope this component brings as much joy to your projects as it did to mine. Dive into the code, tweak it, break it, and let's continue to build amazing things together in the open-source universe!
 
-Happy coding, and may your calendars be forever synchronized! 📆✨
-
-
-
-export default function MDXPage({ children }) {
-  return <div className="prose max-w-none prose-slate prose-h2:font-mono prose-h2:m-0 dark:text-slate-400 dark:prose-headings:text-white dark:prose-a:text-white hover:prose-a:opacity-70 prose-hr:my-5">{children}</div>;
-
-}
+Happy coding, and may your calendars be forever synchronized!
