@@ -1,4 +1,4 @@
-const getTimeAgo = (date: Date) => {
+const getTimeAgo = (date: Date): string => {
   const currentDate = new Date();
   const providedDate = new Date(date);
   const timeDifference = Math.abs(currentDate.getTime() - providedDate.getTime()) / 1000;
@@ -24,7 +24,11 @@ const getTimeAgo = (date: Date) => {
   return "Just now";
 };
 
-function NoteDate({ date }: { date: Date }) {
+interface NoteDateProps {
+  date: Date;
+}
+
+function NoteDate({ date }: NoteDateProps) {
   const timeAgo = getTimeAgo(date);
   return (
     <div className="mb-5 mt-2 font-mono text-xs font-medium">
