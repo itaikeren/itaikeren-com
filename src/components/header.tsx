@@ -1,7 +1,6 @@
 import { ReactNode } from "react";
 
-import { Github, Twitter, Sun, Moon, Monitor } from "lucide-react";
-import { useTheme } from "next-themes";
+import { RiTwitterXLine as TwitterIcon, RiGithubLine as GithubIcon } from "@remixicon/react";
 import { Link, useLocation } from "react-router-dom";
 
 interface SocialLinkProps {
@@ -15,40 +14,10 @@ function SocialLink({ href, children }: SocialLinkProps) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="rounded p-1.5 hover:bg-slate-100 active:translate-y-0.5 dark:hover:bg-slate-800"
+      className="ring-0 hover:ring-1 hover:ring-blue-600 p-1.5 min-w-20 flex items-center bg-blue-50 text-blue-600 text-xs gap-1 transition-all duration-100"
     >
       {children}
     </a>
-  );
-}
-
-function ThemeToggle() {
-  const { setTheme, theme } = useTheme();
-
-  const toggleTheme = () => {
-    if (theme === "light") {
-      setTheme("system");
-    } else if (theme === "dark") {
-      setTheme("light");
-    } else {
-      setTheme("dark");
-    }
-  };
-
-  return (
-    <div className="flex flex-row-reverse items-center gap-1">
-      <button
-        className="peer rounded p-1.5 hover:bg-slate-100 active:translate-y-0.5 dark:hover:bg-slate-800"
-        onClick={toggleTheme}
-      >
-        {theme === "light" && <Sun size={16} strokeWidth={1.85} />}
-        {theme === "dark" && <Moon size={16} strokeWidth={1.85} />}
-        {theme === "system" && <Monitor size={16} strokeWidth={1.85} />}
-      </button>
-      <span className="pointer-events-none translate-x-2 select-none font-[family-name:var(--font-roboto-mono)] text-xs text-slate-400 opacity-0 transition-all peer-hover:translate-x-0 peer-hover:opacity-100">
-        {theme}
-      </span>
-    </div>
   );
 }
 
@@ -57,17 +26,18 @@ function Header() {
   const pathname = location.pathname;
 
   return (
-    <header className="mb-3 flex justify-between font-[family-name:var(--font-inter)]">
+    <header className="mb-3 flex flex-col sm:flex-row justify-between">
       <Link to="/" aria-disabled={pathname === "/" ? true : false} className="-ml-2 aria-disabled:pointer-events-none">
         <h1 className="rounded p-1.5 text-2xl font-bold hover:bg-slate-100 dark:hover:bg-slate-800">Itai Keren</h1>
       </Link>
       <nav className="flex items-center gap-2">
-        <ThemeToggle />
         <SocialLink href="https://twitter.com/itai_keren/">
-          <Twitter size={16} strokeWidth={1.85} />
+          <TwitterIcon size={16} strokeWidth={1.85} />
+          @itaikeren
         </SocialLink>
         <SocialLink href="https://github.com/itaikeren/">
-          <Github size={16} strokeWidth={1.85} />
+          <GithubIcon size={16} strokeWidth={1.85} />
+          @itaikeren
         </SocialLink>
       </nav>
     </header>
