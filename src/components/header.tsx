@@ -31,7 +31,7 @@ function Header() {
         <h1 className="rounded p-1.5 text-2xl font-bold hover:bg-slate-100 dark:hover:bg-slate-800">Itai Keren</h1>
       </Link>
       <nav className="flex items-center gap-2">
-        <SocialLink href="https://twitter.com/itai_keren/">
+        <SocialLink href="https://x.com/itaikeren">
           <TwitterIcon size={16} strokeWidth={1.85} />
           @itaikeren
         </SocialLink>
