@@ -1,8 +1,8 @@
 import NoteDate from "@/components/note-date";
 
 ## Unveiling Slek, a calendar component for React
-<NoteDate date={new Date('2023-11-20')} />
----
+
+## <NoteDate date={new Date('2023-11-20')} />
 
 Today, I'm excited to share with you the journey behind the creation of the Slek Calendar Component for React. Buckle up, as we embark on a tale of long-standing dreams, open-source passion, and a touch of whimsy.
 
@@ -49,21 +49,22 @@ Building a calendar component is like sculpting – you start with a rough block
 
 #### Brainstorming and Design:
 
-   I sat down with a cup of coffee (okay, maybe more than one) and sketched out the structure. What elements does a calendar need? How can I make it flexible for various use cases? What's the best way to make it customizable?
+I sat down with a cup of coffee (okay, maybe more than one) and sketched out the structure. What elements does a calendar need? How can I make it flexible for various use cases? What's the best way to make it customizable?
 
-   I choose to go with an unstyled approach, to give you the freedom to style it as you wish, and just focus on the functionality.
+I choose to go with an unstyled approach, to give you the freedom to style it as you wish, and just focus on the functionality.
 
-   Also, two things I knew from the start:
-   1. I wanted to use a render prop for the Grid, because: (A) I find it more flexible, and (B) I want to give you the freedom to render your own cell component.
-  2. I wanted to use the grid layout and not enters to the dark world of tables.
+Also, two things I knew from the start:
+
+1. I wanted to use a render prop for the Grid, because: (A) I find it more flexible, and (B) I want to give you the freedom to render your own cell component.
+2. I wanted to use the grid layout and not enters to the dark world of tables.
 
 #### Coding Frenzy:
 
-   Armed with VS Code and determination, I started coding.
+Armed with VS Code and determination, I started coding.
 
-   I began with building the Grid, as this is the heart of our component. Most of the current Calendar components out there only provide the "dates view", but I wanted to give you the option to render a "months view" and a "year view" as well, which means I had to calculate the size of the grid dynamically (7 columns for the dates and 3 for the months and years).
+I began with building the Grid, as this is the heart of our component. Most of the current Calendar components out there only provide the "dates view", but I wanted to give you the option to render a "months view" and a "year view" as well, which means I had to calculate the size of the grid dynamically (7 columns for the dates and 3 for the months and years).
 
-   Also, it good to mention that I used [dayjs](https://day.js.org/) for all the date calculations and manipulations (which is the only dependency of this component), so adding support for different languages, start of the week and dates style was a real breeze.
+Also, it good to mention that I used [dayjs](https://day.js.org/) for all the date calculations and manipulations (which is the only dependency of this component), so adding support for different languages, start of the week and dates style was a real breeze.
 
     Next, I moved on to the Header. Most of the calendars out there have the same header structure, so I didn't want to reinvent the wheel here (headline-nav buttons). By default, the headline is the current month and year, but you can easily override it with your own custom headline. Same goes for the navigation buttons.
 
@@ -71,9 +72,9 @@ Building a calendar component is like sculpting – you start with a rough block
 
 #### Open-Source Reveal:
 
-   Finally, the moment arrived. I pushed Slek onto GitHub, releasing it into the wild. I held my breath, wondering if others would find it as thrilling as I did.
+Finally, the moment arrived. I pushed Slek onto GitHub, releasing it into the wild. I held my breath, wondering if others would find it as thrilling as I did.
 
-   Make sure you check out the [Slek website](https://slek.itaikeren.com/) for a live demo and some code examples.
+Make sure you check out the [Slek website](https://slek.itaikeren.com/) for a live demo and some code examples.
 
 ### Conclusion
 
