@@ -4,16 +4,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Build & Development Commands
 
-This project uses **pnpm** as the package manager.
+This project uses **bun** as the package manager.
 
 ```bash
-pnpm dev      # Start Vite development server (localhost:5173)
-pnpm build    # Build for production
-pnpm preview  # Preview production build locally
-pnpm lint     # Run ESLint with Prettier
+bun dev           # Start Vite development server (localhost:5173)
+bun run build     # Build for production
+bun run preview   # Preview production build locally
+bun run lint      # Run oxlint
+bun run format    # Format code with oxfmt
 ```
 
-Always run `pnpm lint` after editing files to ensure code quality.
+Always run `bun run lint` after editing files to ensure code quality.
 
 ## Architecture
 
@@ -38,4 +39,5 @@ Always run `pnpm lint` after editing files to ensure code quality.
 - **File naming:** kebab-case for all files (e.g., `note-date.tsx`, not `NoteDate.tsx`)
 - **TypeScript:** Avoid `any` type; use real, informative types
 - **Formatting:** Double quotes, semicolons required, 120 char print width, no trailing commas
-- **Linting:** ESLint with React, React Hooks, and Prettier plugins
+- **Linting:** oxlint with React, TypeScript, and import plugins
+- **Formatting:** oxfmt (Prettier-compatible)
