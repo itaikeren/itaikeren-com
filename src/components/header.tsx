@@ -27,7 +27,7 @@ function Header() {
 
   return (
     <header className="mb-3 flex flex-col sm:flex-row justify-between">
-      <Link to="/" aria-disabled={pathname === "/" ? true : false} className="-ml-2 aria-disabled:pointer-events-none">
+      <Link to="/" aria-disabled={pathname === "/"} className="-ml-2 aria-disabled:pointer-events-none">
         <h1 className="rounded p-1.5 text-2xl font-bold hover:bg-slate-100 dark:hover:bg-slate-800">Itai Keren</h1>
       </Link>
       <nav className="flex items-center gap-2">
