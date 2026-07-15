@@ -1,43 +1,41 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
-import { RiTwitterXLine as TwitterIcon, RiGithubLine as GithubIcon } from "@remixicon/react";
-import { Link, useLocation } from "react-router-dom";
+import { RiGithubLine as GithubIcon, RiTwitterXLine as TwitterIcon } from "@remixicon/react";
 
 interface SocialLinkProps {
   href: string;
+  label: string;
   children: ReactNode;
 }
 
-function SocialLink({ href, children }: SocialLinkProps) {
+function SocialLink({ href, label, children }: SocialLinkProps) {
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="ring-0 hover:ring-1 hover:ring-blue-600 p-1.5 min-w-20 flex items-center bg-blue-50 text-blue-600 text-xs gap-1 transition-all duration-100"
+      className="group inline-flex items-center gap-1.5 font-mono text-xs text-muted hover:text-ink"
     >
       {children}
+      <span className="border-b border-transparent group-hover:border-accent">{label}</span>
     </a>
   );
 }
 
 function Header() {
-  const location = useLocation();
-  const pathname = location.pathname;
-
   return (
-    <header className="mb-3 flex flex-col sm:flex-row justify-between">
-      <Link to="/" aria-disabled={pathname === "/"} className="-ml-2 aria-disabled:pointer-events-none">
-        <h1 className="rounded p-1.5 text-2xl font-bold hover:bg-slate-100 dark:hover:bg-slate-800">Itai Keren</h1>
-      </Link>
-      <nav className="flex items-center gap-2">
-        <SocialLink href="https://x.com/itaiikeren">
-          <TwitterIcon size={16} strokeWidth={1.85} />
-          @itaiikeren
+    <header className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+      <div className="flex flex-col">
+        <h1 className="text-lg font-semibold leading-none tracking-tight">Itai Keren</h1>
+        <p className="mt-2 font-mono text-xs text-muted">Code &amp; Design</p>
+      </div>
+
+      <nav className="flex items-center gap-5">
+        <SocialLink href="https://x.com/itaiikeren" label="@itaiikeren">
+          <TwitterIcon size={14} />
         </SocialLink>
-        <SocialLink href="https://github.com/itaikeren/">
-          <GithubIcon size={16} strokeWidth={1.85} />
-          @itaikeren
+        <SocialLink href="https://github.com/itaikeren" label="@itaikeren">
+          <GithubIcon size={14} />
         </SocialLink>
       </nav>
     </header>

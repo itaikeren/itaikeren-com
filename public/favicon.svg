@@ -1,4 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="none" viewBox="0 0 128 128">
-  <path fill="#14191F" d="M0 0h128v128H0z"/>
-  <path fill="#fff" d="M58.094 23.28c2.751-4.323 9.06-4.323 11.812 0L82.61 43.241a7 7 0 0 0 2.147 2.148l19.964 12.704c4.322 2.751 4.322 9.06 0 11.812L84.757 82.61a7 7 0 0 0-2.147 2.147l-12.704 19.964c-2.751 4.322-9.06 4.322-11.812 0L45.39 84.757a7 7 0 0 0-2.148-2.147L23.28 69.906c-4.322-2.751-4.322-9.06 0-11.812L43.242 45.39a7 7 0 0 0 2.148-2.148L58.094 23.28Z"/>
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Itai Keren">
+  <!-- IK set in Geist Mono Bold (700) — real glyph outlines embedded as paths (1000 upem), on a black tile. -->
+  <rect width="32" height="32" rx="6" fill="#131316" />
+  <g transform="translate(5.15 22.21) scale(0.0175 -0.0175)" fill="#f2f2f4">
+    <path d="M74 0V128H229V582H74V710H526V582H371V128H526V0Z" />
+    <path transform="translate(600 0)" d="M180 191V406L392 710H562ZM48 0V710H190V0ZM410 0 226 330 322 421 566 0Z" />
+  </g>
 </svg>

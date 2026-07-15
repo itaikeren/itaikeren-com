@@ -5,7 +5,7 @@
 ## Stack
 
 ```
-⚡ vite 7 (rolldown)
+⚡ vite 8
 ⚛️ react 19
 🎨 tailwindcss
 🥟 bun

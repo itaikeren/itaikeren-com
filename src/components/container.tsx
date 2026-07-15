@@ -1,15 +1,11 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 interface ContainerProps {
   children: ReactNode;
 }
 
 function Container({ children }: ContainerProps) {
-  return (
-    <div className="relative mx-auto flex max-w-sm flex-col gap-5 px-8 py-10 text-gray-800 selection:bg-blue-200 dark:text-white dark:selection:text-gray-800 sm:max-w-2xl md:pt-20 lg:max-w-3xl font-geist-mono">
-      {children}
-    </div>
-  );
+  return <div className="mx-auto flex min-h-dvh w-full max-w-2xl flex-col gap-12 px-8 py-14 sm:py-20">{children}</div>;
 }
 
 export default Container;

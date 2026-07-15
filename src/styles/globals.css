@@ -1,11 +1,112 @@
-@import url("https://fonts.googleapis.com/css2?family=Geist+Mono&display=swap");
 @import "tailwindcss";
 
-@plugin "@tailwindcss/typography";
+/* ------------------------------------------------------------------ *
+ * Theme tokens — warm paper, tinted neutrals, one rare accent.
+ * OKLCH so light/dark steps read as perceptually even. Chroma drops
+ * as values approach the extremes so nothing looks garish.
+ * ------------------------------------------------------------------ */
+:root {
+  /* super light gray — neutral, a hair of cool so it doesn't read blue */
+  --paper: oklch(0.966 0.0015 265);
+  --paper-raised: oklch(0.935 0.002 265);
+  --ink: oklch(0.28 0.004 265);
+  --muted: oklch(0.53 0.004 265);
+  --faint: oklch(0.71 0.003 265);
+  --line: oklch(0.89 0.003 265);
+  --accent: oklch(0.6 0.19 33);
 
-@custom-variant dark (&:where(.dark, .dark *));
+  /* per-project identities, pulled from each project's real favicon */
+  --mdv: oklch(0.53 0.14 150);
+  --locutory: oklch(0.4 0.004 265);
+}
 
-@theme {
-  --font-geist-mono: "Geist Mono", monospace;
-  --font-inter: "Inter", sans-serif;
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* dark gray, a good bit deeper — still gray, not pure black */
+    --paper: oklch(0.18 0.004 265);
+    --paper-raised: oklch(0.235 0.005 265);
+    --ink: oklch(0.93 0.003 265);
+    --muted: oklch(0.66 0.004 265);
+    --faint: oklch(0.47 0.005 265);
+    --line: oklch(0.32 0.005 265);
+    --accent: oklch(0.72 0.17 35);
+
+    --mdv: oklch(0.78 0.16 152);
+    --locutory: oklch(0.86 0.004 265);
+  }
+}
+
+@theme inline {
+  --font-sans: "Geist", sans-serif;
+  --font-mono: "Geist Mono", monospace;
+  --font-pixel: "Geist Pixel", monospace;
+
+  --color-paper: var(--paper);
+  --color-paper-raised: var(--paper-raised);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-mdv: var(--mdv);
+  --color-locutory: var(--locutory);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklch, var(--accent) 22%, transparent);
+    color: var(--ink);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* keyboard focus only — never on mouse click */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Signature motion — one orchestrated load, staggered per block.
+ * Disabled under reduced-motion.
+ * ------------------------------------------------------------------ */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.6rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  opacity: 0;
+  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--rise-delay, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    opacity: 1;
+    animation: none;
+  }
 }
