@@ -15,15 +15,15 @@ const projects: Project[] = [
     index: "01",
     name: "mdv",
     tagline: "Write it in markdown, ship it as a link.",
-    href: "https://github.com/itaikeren/mdv",
+    href: "https://mdv.itai.sh",
     mark: <MdvMark className="size-[22px] text-mdv" />
   },
   {
     index: "02",
     name: "locutory",
     tagline: "A Meet link, but for agents.",
-    href: "https://github.com/itaikeren/locutory",
-    mark: <LocutoryMark className="size-8" />
+    href: "https://locutory.itai.sh",
+    mark: <LocutoryMark className="size-full" />
   }
 ];
 
@@ -60,11 +60,10 @@ function ProjectRow({ index, name, tagline, href, mark }: Project) {
 
 function Projects() {
   return (
-    <section aria-label="Open source" className="flex flex-col gap-3">
+    <section aria-label="Projects" className="flex flex-col gap-3">
       <div className="flex items-baseline gap-3">
-        <h2 className="font-mono text-[0.7rem] font-medium uppercase tracking-[0.18em] text-muted">Open source</h2>
+        <h2 className="font-mono text-[0.7rem] font-medium uppercase tracking-[0.18em] text-muted">Projects</h2>
         <span className="h-px flex-1 bg-line" />
-        <span className="font-mono text-[0.7rem] text-faint tabular-nums">{projects.length}</span>
       </div>
 
       <div className="flex flex-col">

@@ -31,8 +31,11 @@ function Header() {
       </div>
 
       <nav className="flex items-center gap-5">
+        {/* X's mark fills its box edge-to-edge while GitHub's has built-in
+            padding, so matching them geometrically reads as mismatched.
+            Optically the X wants to be a couple of pixels smaller. */}
         <SocialLink href="https://x.com/itaiikeren" label="@itaiikeren">
-          <TwitterIcon size={14} />
+          <TwitterIcon size={12} />
         </SocialLink>
         <SocialLink href="https://github.com/itaikeren" label="@itaikeren">
           <GithubIcon size={14} />

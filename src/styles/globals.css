@@ -6,9 +6,9 @@
  * as values approach the extremes so nothing looks garish.
  * ------------------------------------------------------------------ */
 :root {
-  /* super light gray — neutral, a hair of cool so it doesn't read blue */
-  --paper: oklch(0.966 0.0015 265);
-  --paper-raised: oklch(0.935 0.002 265);
+  /* near-white — still tinted a hair cool so it doesn't read flat */
+  --paper: oklch(0.985 0.0015 265);
+  --paper-raised: oklch(0.952 0.002 265);
   --ink: oklch(0.28 0.004 265);
   --muted: oklch(0.53 0.004 265);
   --faint: oklch(0.71 0.003 265);
