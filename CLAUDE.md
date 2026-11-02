@@ -30,7 +30,7 @@ Always run `bun run lint` after editing files to ensure code quality.
 
 **Routing:** Uses React Router v7 Declarative mode with `<Link to="...">` for navigation and `useLocation()` for pathname detection.
 
-**Theming:** Semantic OKLCH color tokens (`--paper`, `--ink`, `--muted`, `--line`, `--accent`, plus per-project `--mdv` / `--locutory`) defined in `:root` and swapped under `@media (prefers-color-scheme: dark)`. Mapped to Tailwind utilities via `@theme inline` (e.g. `bg-paper`, `text-ink`). No theme provider or toggle — it follows the OS.
+**Theming:** Semantic OKLCH color tokens (`--paper`, `--ink`, `--muted`, `--line`, `--accent`, plus per-project `--mdv` / `--locutory` / `--fac`) defined in `:root` and swapped under `@media (prefers-color-scheme: dark)`. Mapped to Tailwind utilities via `@theme inline` (e.g. `bg-paper`, `text-ink`). No theme provider or toggle — it follows the OS.
 
 **Fonts:** Geist (sans), Geist Mono, and Geist Pixel are loaded from Google Fonts in `index.html` and exposed as `font-sans` / `font-mono` / `font-pixel`. Geist Pixel is a signature accent (the `ik` monogram, favicon).
 

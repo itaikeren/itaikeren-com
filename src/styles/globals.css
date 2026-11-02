@@ -18,6 +18,7 @@
   /* per-project identities, pulled from each project's real favicon */
   --mdv: oklch(0.53 0.14 150);
   --locutory: oklch(0.4 0.004 265);
+  --fac: oklch(0.63 0.102 199);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,6 +34,7 @@
 
     --mdv: oklch(0.78 0.16 152);
     --locutory: oklch(0.86 0.004 265);
+    --fac: oklch(0.81 0.107 195);
   }
 }
 
@@ -50,6 +52,7 @@
   --color-accent: var(--accent);
   --color-mdv: var(--mdv);
   --color-locutory: var(--locutory);
+  --color-fac: var(--fac);
 }
 
 @layer base {

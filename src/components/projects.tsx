@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { LocutoryMark, MdvMark } from "@/components/marks";
+import { FacMark, LocutoryMark, MdvMark } from "@/components/marks";
 
 interface Project {
   index: string;
@@ -24,6 +24,13 @@ const projects: Project[] = [
     tagline: "A Meet link, but for agents.",
     href: "https://locutory.itai.sh",
     mark: <LocutoryMark className="size-full" />
+  },
+  {
+    index: "03",
+    name: "fac",
+    tagline: "Super fast autocomplete for your terminal.",
+    href: "https://github.com/itaikeren/fac",
+    mark: <FacMark className="size-[22px] text-fac" />
   }
 ];
 

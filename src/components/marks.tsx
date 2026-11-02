@@ -4,12 +4,21 @@
  *  - mdv: the lowercase pixel "m" (Pixelify Sans glyph), in terminal green.
  *  - locutory: the near-black tile with a single light slot — the one room
  *    where the monks could speak.
+ *  - fac: the prompt chevron "›" from its logo (JetBrains Mono SemiBold), in teal.
  */
 
 export function MdvMark({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 32 32" className={className} fill="currentColor" aria-hidden>
       <path d="M3.0 25.3 L3.0 6.7 L14.39 6.7 L14.39 10.37 L17.61 10.37 L17.61 6.7 L25.38 6.7 L25.38 10.37 L29.0 10.37 L29.0 25.3 L24.98 25.3 L24.98 10.73 L18.01 10.73 L18.01 25.3 L13.99 25.3 L13.99 10.73 L7.07 10.73 L7.07 25.3 Z" />
+    </svg>
+  );
+}
+
+export function FacMark({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 32 32" className={className} fill="currentColor" aria-hidden>
+      <path d="M10.26 25 17.54 16.08 10.11 7H14.61L21.89 16L14.61 25Z" />
     </svg>
   );
 }
